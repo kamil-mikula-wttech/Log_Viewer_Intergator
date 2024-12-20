@@ -37,6 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnOpenInNotepad = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.btnSizeUp = new System.Windows.Forms.Button();
+            this.btnSizeDown = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rtbLog
@@ -76,7 +79,7 @@
             this.cbInfo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbInfo.Location = new System.Drawing.Point(38, 263);
+            this.cbInfo.Location = new System.Drawing.Point(45, 332);
             this.cbInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbInfo.Name = "cbInfo";
             this.cbInfo.Size = new System.Drawing.Size(70, 29);
@@ -90,7 +93,7 @@
             this.cbWarn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbWarn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbWarn.Location = new System.Drawing.Point(38, 303);
+            this.cbWarn.Location = new System.Drawing.Point(45, 372);
             this.cbWarn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbWarn.Name = "cbWarn";
             this.cbWarn.Size = new System.Drawing.Size(86, 29);
@@ -104,7 +107,7 @@
             this.cbError.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbError.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbError.Location = new System.Drawing.Point(38, 343);
+            this.cbError.Location = new System.Drawing.Point(45, 412);
             this.cbError.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbError.Name = "cbError";
             this.cbError.Size = new System.Drawing.Size(80, 29);
@@ -118,7 +121,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(15, 234);
+            this.label2.Location = new System.Drawing.Point(22, 303);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 25);
@@ -153,12 +156,51 @@
             this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
+            // btnSizeUp
+            // 
+            this.btnSizeUp.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnSizeUp.Location = new System.Drawing.Point(85, 179);
+            this.btnSizeUp.Name = "btnSizeUp";
+            this.btnSizeUp.Size = new System.Drawing.Size(30, 29);
+            this.btnSizeUp.TabIndex = 10;
+            this.btnSizeUp.Text = "+";
+            this.btnSizeUp.UseVisualStyleBackColor = false;
+            this.btnSizeUp.Click += new System.EventHandler(this.btnSizeUp_Click);
+            // 
+            // btnSizeDown
+            // 
+            this.btnSizeDown.BackColor = System.Drawing.Color.Maroon;
+            this.btnSizeDown.ForeColor = System.Drawing.Color.Black;
+            this.btnSizeDown.Location = new System.Drawing.Point(49, 179);
+            this.btnSizeDown.Name = "btnSizeDown";
+            this.btnSizeDown.Size = new System.Drawing.Size(30, 29);
+            this.btnSizeDown.TabIndex = 11;
+            this.btnSizeDown.Text = "-";
+            this.btnSizeDown.UseVisualStyleBackColor = false;
+            this.btnSizeDown.Click += new System.EventHandler(this.btnSizeDown_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Location = new System.Drawing.Point(42, 151);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "font size";
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1056, 628);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnSizeDown);
+            this.Controls.Add(this.btnSizeUp);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnOpenInNotepad);
             this.Controls.Add(this.label2);
@@ -186,5 +228,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOpenInNotepad;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.Button btnSizeUp;
+        private System.Windows.Forms.Button btnSizeDown;
+        private System.Windows.Forms.Label label3;
     }
 }

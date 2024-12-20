@@ -81,8 +81,8 @@ namespace Log_Viewer_Intergator
             {
                 ShowSearchDialog();
             }
+            
         }
-
         private void ShowSearchDialog()
         {
             string searchTerm = Microsoft.VisualBasic.Interaction.InputBox(
@@ -145,6 +145,18 @@ namespace Log_Viewer_Intergator
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSizeUp_Click(object sender, EventArgs e)
+        {
+            Font newFont = new Font(rtbLog.Font.FontFamily, rtbLog.Font.Size+1); 
+            rtbLog.Font = newFont;
+        }
+
+        private void btnSizeDown_Click(object sender, EventArgs e)
+        {
+            Font newFont = new Font(rtbLog.Font.FontFamily, rtbLog.Font.Size - 1);
+            rtbLog.Font = newFont;
         }
     }
 }
