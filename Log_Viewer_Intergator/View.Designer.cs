@@ -30,7 +30,7 @@
         {
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.txbLogSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblInclude = new System.Windows.Forms.Label();
             this.cbInfo = new System.Windows.Forms.CheckBox();
             this.cbWarn = new System.Windows.Forms.CheckBox();
             this.cbError = new System.Windows.Forms.CheckBox();
@@ -40,38 +40,40 @@
             this.btnSizeUp = new System.Windows.Forms.Button();
             this.btnSizeDown = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.pLog = new System.Windows.Forms.Panel();
+            this.pLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbLog
             // 
             this.rtbLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.rtbLog.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.rtbLog.Location = new System.Drawing.Point(162, 57);
+            this.rtbLog.Location = new System.Drawing.Point(192, 57);
             this.rtbLog.Name = "rtbLog";
-            this.rtbLog.Size = new System.Drawing.Size(876, 550);
+            this.rtbLog.Size = new System.Drawing.Size(846, 550);
             this.rtbLog.TabIndex = 0;
             this.rtbLog.Text = "";
             // 
             // txbLogSearch
             // 
-            this.txbLogSearch.Location = new System.Drawing.Point(310, 18);
+            this.txbLogSearch.Location = new System.Drawing.Point(339, 18);
             this.txbLogSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbLogSearch.Name = "txbLogSearch";
-            this.txbLogSearch.Size = new System.Drawing.Size(727, 26);
+            this.txbLogSearch.Size = new System.Drawing.Size(698, 26);
             this.txbLogSearch.TabIndex = 1;
             // 
-            // label1
+            // lblInclude
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(158, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Include content";
+            this.lblInclude.AutoSize = true;
+            this.lblInclude.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInclude.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblInclude.Location = new System.Drawing.Point(187, 18);
+            this.lblInclude.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInclude.Name = "lblInclude";
+            this.lblInclude.Size = new System.Drawing.Size(144, 25);
+            this.lblInclude.TabIndex = 2;
+            this.lblInclude.Text = "Include content";
             // 
             // cbInfo
             // 
@@ -79,7 +81,7 @@
             this.cbInfo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbInfo.Location = new System.Drawing.Point(45, 332);
+            this.cbInfo.Location = new System.Drawing.Point(42, 40);
             this.cbInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbInfo.Name = "cbInfo";
             this.cbInfo.Size = new System.Drawing.Size(70, 29);
@@ -93,7 +95,7 @@
             this.cbWarn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbWarn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbWarn.Location = new System.Drawing.Point(45, 372);
+            this.cbWarn.Location = new System.Drawing.Point(42, 80);
             this.cbWarn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbWarn.Name = "cbWarn";
             this.cbWarn.Size = new System.Drawing.Size(86, 29);
@@ -107,7 +109,7 @@
             this.cbError.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbError.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbError.Location = new System.Drawing.Point(45, 412);
+            this.cbError.Location = new System.Drawing.Point(42, 120);
             this.cbError.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbError.Name = "cbError";
             this.cbError.Size = new System.Drawing.Size(80, 29);
@@ -121,7 +123,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(22, 303);
+            this.label2.Location = new System.Drawing.Point(19, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 25);
@@ -133,7 +135,7 @@
             this.btnOpenInNotepad.BackColor = System.Drawing.Color.Black;
             this.btnOpenInNotepad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOpenInNotepad.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnOpenInNotepad.Location = new System.Drawing.Point(4, 511);
+            this.btnOpenInNotepad.Location = new System.Drawing.Point(1, 219);
             this.btnOpenInNotepad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOpenInNotepad.Name = "btnOpenInNotepad";
             this.btnOpenInNotepad.Size = new System.Drawing.Size(150, 98);
@@ -192,26 +194,36 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "font size";
             // 
+            // pLog
+            // 
+            this.pLog.Controls.Add(this.btnOpenInNotepad);
+            this.pLog.Controls.Add(this.cbInfo);
+            this.pLog.Controls.Add(this.cbWarn);
+            this.pLog.Controls.Add(this.cbError);
+            this.pLog.Controls.Add(this.label2);
+            this.pLog.Location = new System.Drawing.Point(4, 214);
+            this.pLog.Name = "pLog";
+            this.pLog.Size = new System.Drawing.Size(152, 323);
+            this.pLog.TabIndex = 13;
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1056, 628);
+            this.Controls.Add(this.pLog);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSizeDown);
             this.Controls.Add(this.btnSizeUp);
             this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.btnOpenInNotepad);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbError);
-            this.Controls.Add(this.cbWarn);
-            this.Controls.Add(this.cbInfo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblInclude);
             this.Controls.Add(this.txbLogSearch);
             this.Controls.Add(this.rtbLog);
             this.Name = "View";
             this.Text = "View";
+            this.pLog.ResumeLayout(false);
+            this.pLog.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,7 +233,7 @@
 
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.TextBox txbLogSearch;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInclude;
         private System.Windows.Forms.CheckBox cbInfo;
         private System.Windows.Forms.CheckBox cbWarn;
         private System.Windows.Forms.CheckBox cbError;
@@ -231,5 +243,6 @@
         private System.Windows.Forms.Button btnSizeUp;
         private System.Windows.Forms.Button btnSizeDown;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pLog;
     }
 }

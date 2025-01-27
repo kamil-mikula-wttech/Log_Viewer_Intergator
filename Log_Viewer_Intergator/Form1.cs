@@ -14,16 +14,14 @@ namespace Log_Viewer_Intergator
     public partial class LogViewer : Form
     {
         AWSConnectorDownloader awsDownloader = new AWSConnectorDownloader();
-        LogWorker logWorker = new LogWorker();
+        FileWorker logWorker = new FileWorker();
         Configuration config = new Configuration();
         public LogViewer()
         {
             InitializeComponent();
-            cbLogs.Items.Add("Invoices");
-            cbLogs.Items.Add("Expenses");
-            cbLogs.Items.Add("Images");
-            cbLogs.Items.Add("All logs");
-            cbLogs.SelectedIndex = 3;
+            cbLogs.Items.Add(config.Images);
+            cbLogs.Items.Add(config.AllLogs);
+            cbLogs.SelectedIndex = 1;
 
             this.Font = SystemFonts.IconTitleFont;
 
@@ -33,12 +31,30 @@ namespace Log_Viewer_Intergator
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            string typeOfLogs = cbLogs.SelectedItem.ToString();
+            string typeOfAction = cbLogs.SelectedItem.ToString();
 
-            logWorker.DeleteAllLogsFromLogFolder();
+            logWorker.DeleteAllFilesFromFilesFolder();
+            if(typeOfAction == config.AllLogs)
             DownloadLogs(dtpLog.Value);
+            else
+            {
+                DownloadImageFiles(dtpLog.Value);
+            }
           
         }
+
+        private async Task DownloadImageFiles(DateTime date)
+        {
+            try
+            {
+                await awsDownloader.TryDownloadImageFilesFromAWS(date);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private async Task DownloadLogs(DateTime date)
         {
             try
@@ -52,8 +68,28 @@ namespace Log_Viewer_Intergator
         }
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            logWorker.MergeLogsIntoOneFile();
-            new View().ShowDialog();
+            if(cbLogs.SelectedItem == config.AllLogs)
+            {
+                logWorker.MergeLogsIntoOneFile();
+                new View().ShowDialog();
+            }
+            else
+            {
+                new View(config.Images).ShowDialog();
+            }
+        }
+
+        private void cbLogs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((sender as ComboBox).SelectedItem == config.Images)
+            {
+                btnLogs.Text = config.GenerateImages;
+
+            }
+            else
+            {
+                btnLogs.Text = config.GenerateLogs;
+            }
         }
     }
 }

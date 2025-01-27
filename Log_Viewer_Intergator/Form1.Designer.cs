@@ -59,6 +59,7 @@
             this.cbLogs.Name = "cbLogs";
             this.cbLogs.Size = new System.Drawing.Size(158, 33);
             this.cbLogs.TabIndex = 1;
+            this.cbLogs.SelectedIndexChanged += new System.EventHandler(this.cbLogs_SelectedIndexChanged);
             // 
             // dtpLog
             // 
@@ -106,7 +107,7 @@
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(172, 101);
             this.btnProcess.TabIndex = 5;
-            this.btnProcess.Text = "Process logs and open new window";
+            this.btnProcess.Text = "Process files and open new window";
             this.btnProcess.UseVisualStyleBackColor = false;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 

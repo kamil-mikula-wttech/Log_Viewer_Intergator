@@ -6,24 +6,23 @@ using static System.Windows.Forms.LinkLabel;
 
 namespace Log_Viewer_Intergator
 {
-    internal class LogWorker
+    internal class FileWorker
     {
         Configuration config = new Configuration();
-        internal void DeleteAllLogsFromLogFolder()
+        internal void DeleteAllFilesFromFilesFolder()
         {
             string[] files = Directory.GetFiles(config.LogFileDirectory);
 
             foreach (string file in files)
             {
                 File.Delete(file);
-                Console.WriteLine($"{file} deleted.");
             }
         }
         internal void MergeLogsIntoOneFile()
         {
             string directoryPath = config.LogFileDirectory;
-            string outputFilePath = Path.Combine(directoryPath, "BIG_DADDY.txt");
-            string outputFilePathTrash = Path.Combine(directoryPath, "TRASH.txt");
+            string outputFilePath = Path.Combine(directoryPath, config.LogFile);
+            string outputFilePathTrash = Path.Combine(directoryPath, config.TrashFile);
             List<string> lines = new List<string>();
             foreach (string filePath in Directory.GetFiles(directoryPath))
             {
@@ -34,9 +33,8 @@ namespace Log_Viewer_Intergator
             {
                 foreach (string line in lines)
                 {
-                    if(!line.Contains("[Test worker]") && !line.Contains("[qtp"))
+                    if(!line.Contains(config.TestWorker) && !line.Contains(config.Qtp))
                         writer.WriteLine(line);
-
                     else
                     {
                         writerTrash.WriteLine(line);
@@ -44,5 +42,6 @@ namespace Log_Viewer_Intergator
                 }
             }
         }
+      
     }
 }
